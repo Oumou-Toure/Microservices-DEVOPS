@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.db
+
+# Node
+node_modules/
+dist/
+
+# Next.js
+.next/
+
+# Prisma
+prisma/dev.db
+
+# Env
+.env.local
