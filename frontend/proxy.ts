@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export const config = {
-  matcher: ['/dashboard/:path*'],
+  matcher: ['/dashboard/:path*', '/recipes/:path*'],
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const access = request.cookies.get('access_token')?.value
 
   if (!access) {
