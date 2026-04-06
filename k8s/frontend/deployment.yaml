@@ -19,9 +19,10 @@ spec:
           image: oumoutoure/frontend:latest
           ports:
             - containerPort: 3000
-
           env:
             - name: AUTH_SERVICE_URL
               value: "http://auth-service:8000"
             - name: ORDER_SERVICE_URL
               value: "http://order-service:4000/orders"
+            - name: RECIPE_SERVICE_URL
+              value: "http://recipe-service:5000"

@@ -24,13 +24,6 @@ spec:
                 name: order-service
                 port:
                   number: 4000
-          - path: /recipes(/|$)(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: recipe-service
-                port:
-                  number: 5000
           - path: /()(.*)
             pathType: ImplementationSpecific
             backend:
