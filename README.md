@@ -1,4 +1,4 @@
-# Microservices DevOps — Projet Évalué EFREI M1
+# Microservices DevOps 
 
 ## Présentation
 
@@ -205,7 +205,3 @@ RECIPE_SERVICE_URL=http://localhost:5000
 | DELETE | /recipes/favorites/:id | JWT | Supprime un favori si il appartient à l'utilisateur |
 | GET | /health |  | Retourne le statut du service |
 
-
-## ETUDIANT
-
-**Oumou Touré** — M1 DEV EFREI
