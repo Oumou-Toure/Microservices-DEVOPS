@@ -9,17 +9,6 @@ Ce projet est la continuité des TPs 01 à 06 du cours DevOps. L'architecture de
 
 Le frontend Next.js joue le rôle d'API Gateway : il intercepte toutes les requêtes du navigateur, lit le cookie JWT httpOnly côté serveur et les transmet aux services concernés. Le token JWT n'est jamais exposé au navigateur. Le auth-service génère les tokens JWT et les signe avec une clé secrète `JWT_SECRET`. Le order-service et le recipe-service utilisent cette même clé pour vérifier les tokens eux-mêmes.
 
-
-[ Navigateur ]
-      ↓
-[ frontend Next.js — Port 3000 — API Gateway SSR ]
-      ↓                  ↓                   ↓
-[ auth-service ]   [ order-service ]   [ recipe-service ]
-[ FastAPI:8000 ]   [ NestJS:4000   ]   [ NestJS:5000    ]
-[ SQLite       ]   [ SQLite+Prisma ]   [ SQLite+Prisma  ]
-                                       [ TheMealDB API  ]
-
-
 ## API publique — TheMealDB
 
 Le recipe-service utilise l'API publique TheMealDB (https://www.themealdb.com/api.php). Elle est totalement gratuite et ne nécessite aucune clé API. Depuis la page `/recipes`, l'utilisateur tape un mot-clé (ex: "chicken", "pasta"), le frontend appelle `/api/recipes/search?q=chicken` qui contacte directement TheMealDB et retourne les résultats. L'utilisateur peut ensuite cliquer sur "Ajouter aux favoris" ce qui envoie les informations de la recette (id, nom, photo, catégorie) au recipe-service qui les stocke en base SQLite liées à son identifiant JWT.
