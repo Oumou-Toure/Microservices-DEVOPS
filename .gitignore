@@ -14,5 +14,15 @@ dist/
 # Prisma
 prisma/dev.db
 
-# Env
-.env.local
+# Secrets Kubernetes
+k8s/secrets.yaml
+
+# Fichiers .env réels 
+.env
+.env.*.local
+.env.production
+.env.staging
+
+# Ne pas ignorer les fichiers exemple
+!.env.example
+!**/.env.example
